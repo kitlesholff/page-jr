@@ -56,7 +56,7 @@ function Hero() {
     className: "container hero-grid"
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "hero-chip"
-  }, "Pintor Profissional • Junior Figueiredo"), /*#__PURE__*/React.createElement("h1", {
+  }, "Pintores • Junior Figueiredo & Bruno Gustavo"), /*#__PURE__*/React.createElement("h1", {
     className: "hero-title"
   }, "Uma nova cor.", /*#__PURE__*/React.createElement("br", null), "Um novo ", /*#__PURE__*/React.createElement("span", {
     className: "gradient-text"
