@@ -526,7 +526,7 @@ function FinalCta() {
   }, /*#__PURE__*/React.createElement("div", {
     className: "final-cta-box"
   }, /*#__PURE__*/React.createElement("h2", null, "Pronto para transformar o visual do seu espaço com padrão profissional?"), /*#__PURE__*/React.createElement("p", null, "Garanta um atendimento especializado com Junior Figueiredo e dê o acabamento que sua empresa ou residência merecem."), /*#__PURE__*/React.createElement("a", {
-    href: "https://wa.me/",
+    href: "https://wa.me/559591413863?text=Ol%C3%A1%2C%20Junior!%20Vi%20o%20site%20da%20JB%20Pinturas%20e%20gostaria%20de%20um%20or%C3%A7amento.",
     target: "_blank",
     rel: "noopener noreferrer",
     className: "btn-primary",
