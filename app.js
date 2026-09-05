@@ -462,7 +462,7 @@ function ProcessSection() {
     className: "process-step-num"
   }, s.step), /*#__PURE__*/React.createElement("div", {
     className: "process-content"
-  }, /*#__PURE__*/React.createElement("h4", null, s.title), /*#__PURE__*/React.createElement("p", null, "Executado pessoalmente por Junior Figueiredo."))), /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement("h4", null, s.title), /*#__PURE__*/React.createElement("p", null, "Executado pessoalmente por Junior ou Bruno."))), /*#__PURE__*/React.createElement("span", {
     className: "process-deliverable"
   }, s.deliverable))))));
 }
@@ -475,8 +475,8 @@ function FaqSection() {
     q: "Preciso retirar os móveis do ambiente antes da pintura?",
     a: "Não é necessário se preocupar com isso. Nós realizamos todo o serviço de proteção de móveis, pisos e rodapés com lonas e fitas especiais antes de iniciar."
   }, {
-    q: "O Junior Figueiredo executa o trabalho pessoalmente?",
-    a: "Sim! Todo o projeto conta com a supervisão e execução direta do Junior, garantindo o padrão de acabamento exigido."
+    q: "O Junior e o Bruno executam o trabalho pessoalmente?",
+    a: "Sim! Todo o projeto conta com a supervisão e execução direta do Junior e Bruno, garantindo o padrão de acabamento exigido."
   }, {
     q: "Como é calculado o orçamento do serviço?",
     a: "O orçamento é feito mediante avaliação técnica do estado das paredes, metragem quadrada e complexidade dos acabamentos decorativos desejados."
