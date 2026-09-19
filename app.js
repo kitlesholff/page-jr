@@ -119,7 +119,7 @@ function PortfolioBeforeAfter() {
       openerRef.current?.focus();
     };
   }, [selected !== null]);
-  const openPhoto = (event, project, phase) => {
+  const openPhoto = (event, project, phase = 'before') => {
     openerRef.current = event.currentTarget;
     setSelected({
       project,
@@ -127,15 +127,30 @@ function PortfolioBeforeAfter() {
     });
   };
   const cases = [{
+    beforeImg: "2.jpeg",
+    afterImg: "2-2.jpeg",
+    title: "Fachada Residencial Externa",
+    desc: "Pintura externa completa com eliminação de manchas de umidade, selagem protetora e acabamento impecável em tom vibrante."
+  }, {
+    beforeImg: "3.jpeg",
+    afterImg: "3-2.jpeg",
+    title: "Varanda e Área de Entrada",
+    desc: "Preparação rigorosa de alvenaria com remoção de descascamento, lixamento fino e acabamento uniforme."
+  }, {
+    beforeImg: "1-2.jpeg",
+    afterImg: "1.jpeg",
+    title: "Recuperação de Parede e Acabamento",
+    desc: "Tratamento de parede danificada na base, aplicação de massa corretiva e pintura acrílica de alta cobertura."
+  }, {
     beforeImg: "WhatsApp Image 2026-08-29 at 21.27.59 (1).jpeg",
     afterImg: "WhatsApp Image 2026-08-29 at 21.27.59 (2).jpeg",
     title: "Ambiente Interno / Cozinha e Sala",
-    desc: "Transformação completa: de paredes brutas com iluminação de obra para acabamento impecável, pintura branca uniforme e integração de ambientes limpa e refinada."
+    desc: "Transformação completa: de paredes brutas para acabamento impecável, pintura branca uniforme e integração refinada."
   }, {
     beforeImg: "WhatsApp Image 2026-08-29 at 21.27.59.jpeg",
     afterImg: "WhatsApp Image 2026-08-29 at 21.28.00.jpeg",
     title: "Tratamento de Infiltração e Pintura Final",
-    desc: "Recuperação estrutural de parede danificada por umidade, seguida de blindagem, aplicação de massa fina e pintura de alto padrão com acabamento aveludado."
+    desc: "Recuperação estrutural de parede danificada por umidade, seguida de blindagem, aplicação de massa fina e acabamento aveludado."
   }];
   return /*#__PURE__*/React.createElement("section", {
     id: "portfolio",
@@ -159,55 +174,16 @@ function PortfolioBeforeAfter() {
     style: {
       color: 'var(--text-muted)'
     }
-  }, "Veja a transformação dos nossos projetos. Toque nas fotos para ampliar.")), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '60px'
-    }
+  }, "Veja os resultados entregues pela JB Pinturas. Toque em qualquer foto para ver como era antes.")), /*#__PURE__*/React.createElement("div", {
+    className: "gallery-grid catalog-grid"
   }, cases.map((c, i) => /*#__PURE__*/React.createElement("article", {
     key: i,
-    className: "project-card"
-  }, /*#__PURE__*/React.createElement("h3", {
-    style: {
-      fontSize: '1.5rem',
-      fontWeight: 700,
-      marginBottom: '8px',
-      textAlign: 'center'
-    }
-  }, c.title), /*#__PURE__*/React.createElement("p", {
-    style: {
-      color: 'var(--text-muted)',
-      textAlign: 'center',
-      maxWidth: '700px',
-      margin: '0 auto 24px'
-    }
-  }, c.desc), /*#__PURE__*/React.createElement("div", {
-    className: "gallery-grid"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "gallery-card"
+    className: "gallery-card project-card-item"
   }, /*#__PURE__*/React.createElement("button", {
     type: "button",
     className: "gallery-img-container",
     onClick: e => openPhoto(e, i, 'before'),
-    "aria-label": 'Ampliar antes: ' + c.title
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "gallery-badge badge-before"
-  }, "Antes"), /*#__PURE__*/React.createElement("img", {
-    src: c.beforeImg,
-    alt: 'Antes — ' + c.title,
-    loading: "lazy"
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "photo-hint"
-  }, "Ampliar ↗")), /*#__PURE__*/React.createElement("div", {
-    className: "gallery-content"
-  }, /*#__PURE__*/React.createElement("h4", null, "Estado Inicial"), /*#__PURE__*/React.createElement("p", null, "Superfície bruta, desgastada ou com necessidade de correção estrutural profunda."))), /*#__PURE__*/React.createElement("div", {
-    className: "gallery-card"
-  }, /*#__PURE__*/React.createElement("button", {
-    type: "button",
-    className: "gallery-img-container",
-    onClick: e => openPhoto(e, i, 'after'),
-    "aria-label": 'Ampliar depois: ' + c.title
+    "aria-label": 'Ver como era antes: ' + c.title
   }, /*#__PURE__*/React.createElement("span", {
     className: "gallery-badge badge-after"
   }, "Depois"), /*#__PURE__*/React.createElement("img", {
@@ -216,9 +192,13 @@ function PortfolioBeforeAfter() {
     loading: "lazy"
   }), /*#__PURE__*/React.createElement("span", {
     className: "photo-hint"
-  }, "Ampliar ↗")), /*#__PURE__*/React.createElement("div", {
+  }, "Ver Antes ↗")), /*#__PURE__*/React.createElement("div", {
     className: "gallery-content"
-  }, /*#__PURE__*/React.createElement("h4", null, "Resultado Final"), /*#__PURE__*/React.createElement("p", null, "Acabamento profissional entregue com perfeição, limpeza e requinte pela JB Pinturas.")))))))), /*#__PURE__*/React.createElement("dialog", {
+  }, /*#__PURE__*/React.createElement("h4", null, c.title), /*#__PURE__*/React.createElement("p", null, c.desc), /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    className: "gallery-action-btn",
+    onClick: e => openPhoto(e, i, 'before')
+  }, "Ver Como Era Antes ↗"))))), /*#__PURE__*/React.createElement("dialog", {
     ref: dialogRef,
     className: "photo-dialog",
     "aria-labelledby": "photo-title",
@@ -267,7 +247,7 @@ function PortfolioBeforeAfter() {
       ...selected,
       phase: 'after'
     })
-  }, "Depois")))));
+  }, "Depois"))))));
 }
 function Arguments() {
   const args = [{
